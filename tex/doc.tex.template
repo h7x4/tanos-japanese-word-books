@@ -1,25 +1,25 @@
+
 % !TeX program = xelatex
 \documentclass[a5paper, twoside]{article}
-
 \usepackage{xeCJK}
 \usepackage{adjustbox}
 \usepackage{graphicx}
 \usepackage{tabu}
 \usepackage{longtable}
 \usepackage{makecell}
-\usepackage[bindingoffset=0.5in]{geometry}
+\usepackage[
+  bindingoffset=0.5in,
+  top=1cm,
+  bottom=1.5cm,
+  left=1cm,
+  right=1cm,
+]{geometry}
 
 \setCJKmainfont{Noto Sans CJK JP}
 
+\input{../tex/frontpage.tex}
+
 \begin{document}
   \renewcommand{\arraystretch}{2}
-    \input{tex/n5.tex}
-    \newline{}
-    \input{tex/n4.tex}
-    \newline{}
-    \input{tex/n3.tex}
-    \newline{}
-    \input{tex/n2.tex}
-    \newline{}
-    \input{tex/n1.tex}
+  ###
 \end{document}

@@ -1,0 +1,82 @@
+\usepackage{fontawesome}
+\usepackage{hyperref}
+\usepackage[
+    type={CC},
+    modifier={by},
+    version={3.0},
+]{doclicense}
+
+\newfontfamily\nscjksixty[SizeFeatures={Size=120}]{Noto Sans CJK JP}
+
+\newcommand{\links}[1]{
+  \doclicenseImage \\
+  \vspace*{5mm}
+  Data made by Jonathan Waller at \url{#1} \\
+  \vspace*{15mm}
+  Project at \\
+  { \Huge \faicon{github-square} } \url{https://github.com/h7x4abk3g}
+}
+
+\newcommand{\fullFrontpage}{
+
+  {
+    \topskip0pt
+    \vspace*{\fill}
+    \begin{center}
+      { \nscjksixty{ JLPT } } \\
+      \vspace*{5mm}
+      { \Huge 単語帳 } \\
+      
+    \end{center}
+    \vspace*{\fill}
+
+    \newpage{}
+
+    \vspace*{\fill}
+    \begin{center}
+      \links{http://www.tanos.co.uk/jlpt/}
+    \end{center}
+    \vspace*{\fill}
+  }
+
+  \newpage{}
+}
+
+\newcommand{\NXfrontpage}[1]{
+
+  {
+    \topskip0pt
+    \vspace*{\fill}
+    \begin{center}
+      { \nscjksixty{ N#1 } } \\
+      \vspace*{5mm}
+      { \Huge 単語帳 } \\
+      
+    \end{center}
+    \vspace*{\fill}
+
+    \newpage{}
+
+    \vspace*{\fill}
+    \begin{center}
+      \links{http://www.tanos.co.uk/jlpt/jlpt#1/}
+    \end{center}
+    \vspace*{\fill}
+  }
+
+  \newpage{}
+}
+
+\newcommand{\NXinnerpage}[1]{
+
+  {
+    \topskip0pt
+    \vspace*{\fill}
+    \begin{center}
+      { \nscjksixty{ N#1 } } \\
+    \end{center}
+    \vspace*{\fill}
+  }
+
+  \newpage{}
+}

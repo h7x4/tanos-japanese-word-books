@@ -27,7 +27,7 @@ for n in reversed(range(1,6)):
       return cellText
       
 
-  with open(f'./data/tex/n{n}.tex', 'w') as file:
+  with open(f'build/texdata/n{n}.tex', 'w') as file:
     file.write('\\begin{longtabu} to \\textwidth {ll|l}\n')
     file.write(
       " \\\\\\hline\n".join(f'{makeMultiCellIfMultipleEntries(row[0])} & {makeMultiCellIfMultipleEntries(row[1])} & {makeMultiCellIfMultipleEntries(row[2], rowtype="e")}' for row in rows)

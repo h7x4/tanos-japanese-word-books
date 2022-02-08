@@ -1,0 +1,7 @@
+data/tex
+
+# TODO: fix
+
+# tex/**/*
+# !tex/**/*.tex
+# !tex/**/*.tex

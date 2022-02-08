@@ -1,0 +1,20 @@
+
+% !TeX program = xelatex
+\documentclass[a5paper, twoside]{article}
+\usepackage{xeCJK}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+\usepackage{tabu}
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage[bindingoffset=0.5in]{geometry}
+
+\input{common/frontPageNx.tex}
+
+\setCJKmainfont{Noto Sans CJK JP}
+
+\begin{document}
+  \renewcommand{\arraystretch}{2}
+    \NXfrontpage{1}
+    \input{../data/tex/n1.tex}
+\end{document}

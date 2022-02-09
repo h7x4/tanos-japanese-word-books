@@ -1,8 +1,9 @@
 build
 pdf
 
-# TODO: fix
-
-# tex/**/*
-# !tex/**/*.tex
-# !tex/**/*.tex
+# venv
+bin
+lib
+lib64
+pyvenv.cfg
+include

@@ -1,24 +1,40 @@
+.PHONY: clean all
 
-build:
+all: wrapper-main.pdf wrapper-nx.pdf
+
+clean:
+	rm -r build pdf
+
+dirs:
 	mkdir build
 	mkdir build/texdata
-
-pdf:
 	mkdir pdf
 
-build/nx.tex: build
-	python python/toTex.py
+build/texdata/nx.tex: dirs 
+	python python/htmlToTex.py
 
+build/nx.tex: build/texdata/nx.tex
+	python python/createMainDoc.py
 
-tex/nx.tex: build/nx.tex
-	python python/createDoc.py
-
-main.pdf: tex/nx.tex pdf
+main.pdf: build/nx.tex
 	cd build; xelatex main.tex
-	mv build/*.pdf pdf
 	
-nx.pdf: tex/nx.tex pdf
-	cd build; for n in 5 4 3 2 1; do \ 
-		xelatex ../tex/$$n.tex; \
+nx.pdf: build/nx.tex
+	cd build; for n in 5 4 3 2 1; do \
+		xelatex n$$n.tex; \
 	done
-	mv build/*.pdf pdf
+
+wrapper-main.pdf: main.pdf
+	python python/createWrapperDoc.py main.pdf main-wrapper.tex
+	cd build; pdflatex main-wrapper.tex
+	mv build/main-wrapper.pdf pdf/main.pdf
+
+wrapper-nx.pdf: nx.pdf
+	for n in 5 4 3 2 1; do \
+		python python/createWrapperDoc.py n$$n.pdf n$$n-wrapper.tex; \
+	done;
+
+	cd build; for n in 5 4 3 2 1; do \
+		pdflatex n$$n-wrapper.tex; \
+		mv n$$n-wrapper.pdf ../pdf/n$$n.pdf; \
+	done;

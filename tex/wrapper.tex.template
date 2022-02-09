@@ -1,0 +1,7 @@
+\documentclass[a4paper, twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\begin{document}
+  ###
+\end{document}
